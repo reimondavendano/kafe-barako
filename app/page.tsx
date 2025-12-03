@@ -1,65 +1,78 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(#6B4423 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
+      </div>
+
+      <div className="container mx-auto px-4 text-center z-10">
+        <div className="mb-12">
+          {/* Logo or Title */}
+          <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary shadow-xl">
+            <Image
+              src="/assets/kape barako.jpg"
+              alt="Kape Barako Logo"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-dark mb-4 tracking-tight">
+            Kape Barako
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl md:text-2xl text-primary font-light italic">
+            "Authentic Batangas Coffee Experience"
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Malolos Branch Card */}
+          <Link href="/kafe-barako-malolos" className="group">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-secondary hover:shadow-2xl hover:border-primary transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col items-center">
+              <div className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border-2 border-accent group-hover:scale-110 transition-transform">
+                <Image
+                  src="/assets/kape barako.jpg"
+                  alt="Malolos Branch"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h2 className="text-2xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">Malolos Branch</h2>
+              <p className="text-gray-600 mb-6">Visit our cozy spot in the heart of Bulacan.</p>
+              <span className="inline-block px-6 py-2 bg-secondary text-dark rounded-full font-semibold group-hover:bg-primary group-hover:text-white transition-colors">
+                Enter Branch &rarr;
+              </span>
+            </div>
+          </Link>
+
+          {/* Talisay Branch Card */}
+          <Link href="/kafe-barako-talisay" className="group">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-secondary hover:shadow-2xl hover:border-primary transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col items-center">
+              <div className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border-2 border-accent group-hover:scale-110 transition-transform">
+                <Image
+                  src="/assets/kape_talisay.jpg"
+                  alt="Talisay Branch"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h2 className="text-2xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">Talisay Branch</h2>
+              <p className="text-gray-600 mb-6">Enjoy your coffee with a view of Taal Lake.</p>
+              <span className="inline-block px-6 py-2 bg-secondary text-dark rounded-full font-semibold group-hover:bg-primary group-hover:text-white transition-colors">
+                Enter Branch &rarr;
+              </span>
+            </div>
+          </Link>
         </div>
-      </main>
-    </div>
+      </div>
+
+      <footer className="absolute bottom-4 text-sm text-gray-400">
+        &copy; {new Date().getFullYear()} Kape Barako Coffee Shop
+      </footer>
+    </main>
   );
 }
