@@ -92,7 +92,7 @@ export default function WhyKafeBarako() {
                         {/* Description Text */}
                         <div className="space-y-4 mb-8">
                             <p className="text-gray-600 leading-relaxed">
-                                Located in the historic city of Malolos, Kape Barako brings the authentic taste of Batangas coffee to Bulacan.
+                                Located in the historic city of Malolos, Kafe Barako brings the authentic taste of Batangas coffee to Bulacan.
                                 We pride ourselves on sourcing the finest Liberica beans, roasted to perfection to bring out that strong,
                                 <span className="font-bold text-primary"> bold flavor</span> that Filipinos love.
                             </p>

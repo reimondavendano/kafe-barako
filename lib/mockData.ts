@@ -29,7 +29,7 @@ export const MALOLOS_MENU: MenuItem[] = [
     // Hot Coffee
     {
         id: 'm1',
-        name: 'Kape Barako',
+        name: 'Kafe Barako',
         description: 'Strong and bold Batangas coffee',
         price: 80,
         category: 'Hot Coffee',

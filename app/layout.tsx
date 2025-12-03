@@ -19,7 +19,7 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "Kape Barako Coffee Shop",
+  title: "Kafe Barako Coffee Shop",
   description: "Experience the bold taste of heritage in every cup",
 };
 

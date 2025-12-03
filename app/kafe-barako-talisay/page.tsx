@@ -17,7 +17,7 @@ export default function TalisayBranch() {
             <Hero branch="talisay" />
             <Banner />
 
-            {/* Why Kape Barako Section */}
+            {/* Why Kafe Barako Section */}
             <section id="story" className="py-20 container mx-auto px-4">
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     <div className="md:w-1/2 relative h-[400px] w-full rounded-lg overflow-hidden shadow-xl">

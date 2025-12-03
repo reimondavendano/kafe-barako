@@ -33,13 +33,13 @@ export default function Header({ branch }: HeaderProps) {
                     <div className="relative w-12 h-12 overflow-hidden rounded-full border-2 border-primary">
                         <Image
                             src={logoSrc}
-                            alt={`Kape Barako ${branchName}`}
+                            alt={`Kafe Barako ${branchName}`}
                             fill
                             className="object-cover"
                         />
                     </div>
                     <span className={`font-bold text-xl font-[family-name:var(--font-bebas)] tracking-wide ${isScrolled ? 'text-primary' : 'text-white drop-shadow-md'}`}>
-                        Kape Barako <span className="text-sm font-normal block">{branchName}</span>
+                        Kafe Barako <span className="text-sm font-normal block">{branchName}</span>
                     </span>
                 </Link>
 

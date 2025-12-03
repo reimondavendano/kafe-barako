@@ -14,7 +14,7 @@ export default function Footer({ branch }: FooterProps) {
         <footer className="bg-dark text-secondary-light py-12">
             <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 className="text-2xl font-bold mb-4 text-accent">Kape Barako</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-accent">Kafe Barako</h3>
                     <p className="mb-2">{branchName}</p>
                     <p className="text-sm opacity-80">
                         Experience the authentic taste of Batangas coffee in a rustic and relaxing ambiance.
@@ -43,7 +43,7 @@ export default function Footer({ branch }: FooterProps) {
                 </div>
             </div>
             <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm opacity-60">
-                &copy; {new Date().getFullYear()} Kape Barako. All rights reserved.
+                &copy; {new Date().getFullYear()} Kafe Barako. All rights reserved.
             </div>
         </footer>
     );

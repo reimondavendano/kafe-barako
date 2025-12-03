@@ -15,7 +15,7 @@ export default function Hero({ branch }: HeroProps) {
             <div className="absolute inset-0 z-0">
                 <Image
                     src={heroImage}
-                    alt={`Kape Barako ${branchName}`}
+                    alt={`Kafe Barako ${branchName}`}
                     fill
                     className="object-cover brightness-50"
                     priority
@@ -24,7 +24,7 @@ export default function Hero({ branch }: HeroProps) {
 
             <div className="relative z-10 container mx-auto px-4">
                 <h1 className="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg font-[family-name:var(--font-bebas)] tracking-wider">
-                    Kape Barako
+                    Kafe Barako
                 </h1>
                 <h2 className="text-2xl md:text-4xl font-bold mb-8 text-secondary-light">
                     {branchName} Branch

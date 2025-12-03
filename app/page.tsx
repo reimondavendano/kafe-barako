@@ -15,14 +15,14 @@ export default function Home() {
           <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary shadow-xl">
             <Image
               src="/assets/kape barako.jpg"
-              alt="Kape Barako Logo"
+              alt="Kafe Barako Logo"
               fill
               className="object-cover"
               priority
             />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-dark mb-4 tracking-tight">
-            Kape Barako
+            Kafe Barako
           </h1>
           <p className="text-xl md:text-2xl text-primary font-light italic">
             "Authentic Batangas Coffee Experience"
@@ -71,7 +71,7 @@ export default function Home() {
       </div>
 
       <footer className="absolute bottom-4 text-sm text-gray-400">
-        &copy; {new Date().getFullYear()} Kape Barako Coffee Shop
+        &copy; {new Date().getFullYear()} Kafe Barako Coffee Shop
       </footer>
     </main>
   );
