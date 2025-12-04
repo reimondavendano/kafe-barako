@@ -6,34 +6,36 @@ export default function VisitUsSection({ branch }: VisitUsSectionProps) {
     const branchInfo = {
         malolos: {
             name: 'Malolos Branch',
-            address: 'Malolos Sports & Convention Center, Malolos City, Bulacan',
-            mapEmbed: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Malolos+Sports+and+Convention+Center,Malolos+City+Bulacan&zoom=14',
+            address: 'Malolos Sports & Convention Center, 10 MacArthur Hwy, Malolos, Bulacan',
+            // Using query parameter format to ensure red pin shows - zoom level 14
+            mapEmbed: 'https://www.google.com/maps?q=Malolos+Sports+and+Convention+Center,+10+MacArthur+Hwy,+Malolos,+Bulacan&output=embed&z=14',
             mapUrl: 'https://maps.app.goo.gl/o4gmgngCzKtNUMhi6',
             phone: '0965 695 2128',
             email: 'kafebarako@gmail.com',
             hours: {
                 weekday: 'Mon-Fri: 4:00 PM - 10:00 PM',
                 weekend: 'Sat: 3:00 PM - 10:00 PM',
-                sunday: 'Sun: Closed',
+                sunday: 'Sun: Closed'
             },
-            facebook: 'https://facebook.com/kafebarakomalolos',
-            instagram: 'https://www.instagram.com/kafe_barako/',
+            facebook: 'https://www.facebook.com/kafebarakomalolos',
+            instagram: 'https://www.instagram.com/kafe_barako/'
         },
         talisay: {
             name: 'Talisay Branch',
             address: 'Talisay, Batangas',
-            mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123456.789!2d121.0!3d14.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDA2JzAwLjAiTiAxMjHCsDAwJzAwLjAiRQ!5e0!3m2!1sen!2sph!4v1234567890',
+            // Coordinates for Talisay, Batangas: 13.9436°N, 120.9329°E
+            mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.123!2d120.9329!3d13.9436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDU2JzM3LjAiTiAxMjDCsDU1JzU4LjQiRQ!5e0!3m2!1sen!2sph!4v1733328000000!5m2!1sen!2sph',
             mapUrl: 'https://www.google.com/maps/search/?api=1&query=Talisay,Batangas',
             phone: '0927 969 8669',
             email: 'kapebarako@gmail.com',
             hours: {
                 weekday: 'Mon-Fri: 8:00 AM - 8:00 PM',
                 weekend: 'Sat-Sun: 8:00 AM - 9:00 PM',
-                sunday: '',
+                sunday: ''
             },
-            facebook: 'https://facebook.com/kafebarako',
-            instagram: 'https://instagram.com/kafebarako',
-        },
+            facebook: 'https://www.facebook.com/kafebarako',
+            instagram: 'https://www.instagram.com/kafebarako'
+        }
     };
 
     const info = branchInfo[branch];
@@ -126,7 +128,7 @@ export default function VisitUsSection({ branch }: VisitUsSectionProps) {
                                     <h3 className="text-xl font-bold text-dark mb-3">Location</h3>
                                     <p className="text-gray-700 mb-4">{info.address}</p>
                                     <a
-                                        href={info.mapUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(info.address)}`}
+                                        href={info.mapUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full hover:bg-accent transition-colors text-sm font-semibold"
@@ -170,7 +172,7 @@ export default function VisitUsSection({ branch }: VisitUsSectionProps) {
                         </div>
                     </div>
 
-                    {/* Google Maps Embed */}
+                    {/* Google Maps Embed - No API Key Required */}
                     <div className="h-full min-h-[600px] rounded-xl overflow-hidden shadow-xl">
                         <iframe
                             src={info.mapEmbed}
