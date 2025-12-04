@@ -6,6 +6,7 @@ export type MenuItem = {
     category: 'Hot Coffee' | 'Cold Brew' | 'Non-Coffee' | 'Food' | 'Coffee' | 'Beverages' | 'Desserts';
     image: string;
     isNew?: boolean;
+    isBestseller?: boolean;
 };
 
 export type PackageItem = {
@@ -34,6 +35,7 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 80,
         category: 'Hot Coffee',
         image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
+        isBestseller: true,
     },
     {
         id: 'm2',
@@ -60,6 +62,7 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 120,
         category: 'Cold Brew',
         image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80',
+        isBestseller: true,
     },
     {
         id: 'm5',
@@ -68,6 +71,7 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 150,
         category: 'Cold Brew',
         image: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=800&q=80',
+        isBestseller: true,
     },
     {
         id: 'm6',
@@ -112,6 +116,7 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 130,
         category: 'Non-Coffee',
         image: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80',
+        isBestseller: true,
     },
     {
         id: 'm11',
@@ -173,6 +178,7 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 180,
         category: 'Food',
         image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
+        isBestseller: true,
     },
     {
         id: 'm18',
@@ -385,3 +391,65 @@ export const GALLERY_IMAGES: GalleryItem[] = [
         category: 'Events',
     },
 ];
+
+export type Testimonial = {
+    id: string;
+    name: string;
+    rating: number;
+    comment: string;
+    date: string;
+    image?: string;
+};
+
+export const TESTIMONIALS: Testimonial[] = [
+    {
+        id: 't1',
+        name: 'Lemuel Bautista Ralotin',
+        rating: 5,
+        comment: 'Definitely recommend Kafe Barako Malolos Branch! Sobrang wala ka masabi sa staff 100/100. And yung mga drinks sobrang sarap! And the setup ng booth nila sobrang ganda and ayos. Overall sobrang okay sya 💯Thank you sa Kafe Barako Malolos Branch especially kay sir James 😇. Sa mga future Events surely uulit kami dito! ☺️💝 Lemuel & Chantal 💝',
+        date: '2024-01-20',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 't2',
+        name: 'Julie Ann Bio Zapatero',
+        rating: 5,
+        comment: 'must try yung hazelnut and salted caramel nila, Sulit and masarap din yung mga homemade breads nila 🙂super friendly and accomdating ng mga may ari🙂, if you are a morning person you can visit them every weekend sa Malolos convention ❤',
+        date: '2022-11-06',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 't3',
+        name: 'Aljay Henry Caluag',
+        rating: 5,
+        comment: 'One of the best place to hang out when you are a morning person, good coffee and friendly baristas ♥️♥️ would certainly recommend this to my friends ☺️ Best coffee · Best iced coffee',
+        date: '2022-09-20',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 't4',
+        name: 'Ivan Macapagal',
+        rating: 5,
+        comment: 'Macademia cold brew! Certainly a must try! Best variety ng kape barako na natikman ko so far. Meron din silang iba\'t ibang timpla ng barako na hahanap hanapin base sa panlasa mo. Also, very accommodating ung owners sa mga preferences ng customer nila. Keep it up Ms. Apple and Sir James! Kudos and God bless! Waiting for more tea selections! 😊 Convenient location · Delicious pastries · Best coffee · Expert baristas · Relaxing atmosphere · Popular with locals · Strong cold brew',
+        date: '2022-09-20',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 't5',
+        name: 'Jardine Jimenez',
+        rating: 5,
+        comment: 'Kape Barako Malolos Branch is my favorite place to hang. The barista was so friendly and pleasant to talk with. One thing that I got fascinated by this place. They had the most affordable and delicious coffee.',
+        date: '2022-09-20',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 't6',
+        name: 'Reimond Mark Avendaño',
+        rating: 5,
+        comment: 'Hot and cold brew @ its best. Best coffee · Good for working · Cheap eats · Great breakfast · Strong cold brew · Expert baristas · Popular with locals · Relaxing atmosphere · Fresh smoothies · Best iced coffee · Convenient location',
+        date: '2022-09-19',
+        image: '/images/icon.jpg',
+    },
+];
+
+

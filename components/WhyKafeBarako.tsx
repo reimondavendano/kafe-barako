@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function WhyKafeBarako() {
     return (
-        <section id="story" className="py-20 bg-secondary/10">
+        <section id="story" className="py-20 bg-white">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-[family-name:var(--font-bebas)] tracking-wide uppercase">

@@ -6,13 +6,18 @@ import PackagesSection from '@/components/PackagesSection';
 import Gallery from '@/components/Gallery';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
-import OffersSection from '@/components/OffersSection';
-import { TALISAY_MENU, PACKAGES, GALLERY_IMAGES } from '@/lib/mockData';
+// import OffersSection from '@/components/OffersSection'; // Hidden temporarily
+import TestimonialsSection from '@/components/TestimonialsSection';
+import VisitUsSection from '@/components/VisitUsSection';
+import MenuPreloadModal from '@/components/MenuPreloadModal';
+// import LoyaltyCardSection from '@/components/LoyaltyCardSection'; // Hidden - will be used in customer portal
+import { TALISAY_MENU, PACKAGES, GALLERY_IMAGES, TESTIMONIALS } from '@/lib/mockData';
 import Image from 'next/image';
 
 export default function TalisayBranch() {
     return (
         <main className="min-h-screen bg-white">
+            <MenuPreloadModal />
             <Header branch="talisay" />
             <Hero branch="talisay" />
             <Banner />
@@ -51,10 +56,20 @@ export default function TalisayBranch() {
                 </div>
             </section>
 
-            <OffersSection />
+            <TestimonialsSection testimonials={TESTIMONIALS} />
+
+            {/* <OffersSection /> */}
+            {/* Special offers hidden - will be re-enabled in the future */}
             <MenuSection items={TALISAY_MENU} />
             <PackagesSection packages={PACKAGES} />
+
+            {/* <LoyaltyCardSection /> */}
+            {/* Loyalty card hidden - will be integrated into customer portal */}
+
             <Gallery images={GALLERY_IMAGES} />
+
+            <VisitUsSection branch="talisay" />
+
             <ContactForm />
             <Footer branch="talisay" />
 

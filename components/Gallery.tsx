@@ -21,7 +21,7 @@ export default function Gallery({ images }: GalleryProps) {
         : images.filter(img => img.category === activeFilter);
 
     return (
-        <section id="gallery" className="py-20 bg-secondary/20">
+        <section id="gallery" className="py-20 bg-white">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-[family-name:var(--font-bebas)] tracking-wide uppercase">Gallery</h2>

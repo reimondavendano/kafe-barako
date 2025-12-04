@@ -6,23 +6,38 @@ import PackagesSection from '@/components/PackagesSection';
 import Gallery from '@/components/Gallery';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
-import OffersSection from '@/components/OffersSection';
+// import OffersSection from '@/components/OffersSection'; // Hidden temporarily
 import WhyKafeBarako from '@/components/WhyKafeBarako';
-import { MALOLOS_MENU, PACKAGES, GALLERY_IMAGES } from '@/lib/mockData';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import VisitUsSection from '@/components/VisitUsSection';
+import MenuPreloadModal from '@/components/MenuPreloadModal';
+// import LoyaltyCardSection from '@/components/LoyaltyCardSection'; // Hidden - will be used in customer portal
+import { MALOLOS_MENU, PACKAGES, GALLERY_IMAGES, TESTIMONIALS } from '@/lib/mockData';
 
 export default function MalolosBranch() {
     return (
         <main className="min-h-screen bg-white">
+            <MenuPreloadModal />
             <Header branch="malolos" />
             <Hero branch="malolos" />
             <Banner />
 
             <WhyKafeBarako />
 
-            <OffersSection />
+            <TestimonialsSection testimonials={TESTIMONIALS} />
+
+            {/* <OffersSection /> */}
+            {/* Special offers hidden - will be re-enabled in the future */}
             <MenuSection items={MALOLOS_MENU} />
             <PackagesSection packages={PACKAGES} />
+
+            {/* <LoyaltyCardSection /> */}
+            {/* Loyalty card hidden - will be integrated into customer portal */}
+
             <Gallery images={GALLERY_IMAGES} />
+
+            <VisitUsSection branch="malolos" />
+
             <ContactForm />
             <Footer branch="malolos" />
 

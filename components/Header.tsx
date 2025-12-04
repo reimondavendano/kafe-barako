@@ -43,7 +43,7 @@ export default function Header({ branch }: HeaderProps) {
                     </span>
                 </Link>
 
-                <nav className="hidden md:flex gap-8">
+                <nav className="hidden md:flex gap-8 items-center">
                     {[
                         { name: 'Home', href: '#home' },
                         { name: 'Why Us', href: '#story' },
@@ -61,14 +61,28 @@ export default function Header({ branch }: HeaderProps) {
                             {link.name}
                         </Link>
                     ))}
+                    <Link
+                        href={`${basePath}#contact`}
+                        className="bg-accent text-white font-bold px-6 py-2 rounded-full hover:bg-primary transition-colors shadow-lg"
+                    >
+                        Book Now
+                    </Link>
                 </nav>
 
-                {/* Mobile Menu Button (Placeholder) */}
-                <button className="md:hidden text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
+                {/* Mobile Menu Button */}
+                <div className="md:hidden flex items-center gap-3">
+                    <Link
+                        href={`${basePath}#contact`}
+                        className="bg-accent text-white font-bold px-4 py-2 rounded-full text-sm"
+                    >
+                        Book
+                    </Link>
+                    <button className={`${isScrolled ? 'text-primary' : 'text-white'}`}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </header>
     );

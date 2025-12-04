@@ -76,11 +76,17 @@ export default function MenuSection({ items }: MenuSectionProps) {
                                         NEW
                                     </span>
                                 )}
+                                {item.isBestseller && (
+                                    <span className="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
+                                        <span>⭐</span> BESTSELLER
+                                    </span>
+                                )}
                             </div>
                             <div className="p-6">
                                 <div className="flex justify-between items-start mb-2">
                                     <h4 className="text-xl font-bold text-dark">{item.name}</h4>
                                     {/* <span className="text-primary font-bold text-lg">₱{item.price}</span> */}
+                                    {/* Price hidden - data preserved in mockData for future use */}
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
                             </div>

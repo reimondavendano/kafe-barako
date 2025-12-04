@@ -13,7 +13,7 @@ export default function PackagesSection({ packages }: PackagesSectionProps) {
     const filteredPackages = packages.filter(p => p.type === activeTab);
 
     return (
-        <section id="packages" className="py-20 bg-white">
+        <section id="packages" className="py-20 bg-secondary/30">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-[family-name:var(--font-bebas)] tracking-wide uppercase">Our Packages</h2>
