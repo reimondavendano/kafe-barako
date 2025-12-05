@@ -14,6 +14,8 @@ import MenuPreloadModal from '@/components/MenuPreloadModal';
 // import LoyaltyCardSection from '@/components/LoyaltyCardSection'; // Hidden - will be used in customer portal
 import { MALOLOS_MENU, PACKAGES, GALLERY_IMAGES, TESTIMONIALS } from '@/lib/mockData';
 
+import { FloatingMessenger } from '@/components/FloatingMessenger';
+
 export default function MalolosBranch() {
     return (
         <main className="min-h-screen bg-white">
@@ -39,6 +41,7 @@ export default function MalolosBranch() {
             <VisitUsSection branch="malolos" />
 
             <ContactForm />
+            <FloatingMessenger />
             <Footer branch="malolos" />
 
             {/* Supabase Connection Guide */}
