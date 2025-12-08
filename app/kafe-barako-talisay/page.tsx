@@ -11,7 +11,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import VisitUsSection from '@/components/VisitUsSection';
 import MenuPreloadModal from '@/components/MenuPreloadModal';
 // import LoyaltyCardSection from '@/components/LoyaltyCardSection'; // Hidden - will be used in customer portal
-import { TALISAY_MENU, PACKAGES, GALLERY_IMAGES, TESTIMONIALS } from '@/lib/mockData';
+import { TALISAY_MENU, PACKAGES, GALLERY_IMAGES, TALISAY_TESTIMONIALS } from '@/lib/mockData';
 import Image from 'next/image';
 
 export default function TalisayBranch() {
@@ -56,7 +56,10 @@ export default function TalisayBranch() {
                 </div>
             </section>
 
-            <TestimonialsSection testimonials={TESTIMONIALS} />
+            <TestimonialsSection
+                testimonials={TALISAY_TESTIMONIALS}
+                facebookLink="https://www.facebook.com/kafebarakoph/reviews"
+            />
 
             {/* <OffersSection /> */}
             {/* Special offers hidden - will be re-enabled in the future */}

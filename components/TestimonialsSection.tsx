@@ -6,9 +6,10 @@ import { useState } from 'react';
 
 type TestimonialsSectionProps = {
     testimonials: Testimonial[];
+    facebookLink?: string;
 };
 
-export default function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
+export default function TestimonialsSection({ testimonials, facebookLink = "https://www.facebook.com/kafebarakomalolos/reviews" }: TestimonialsSectionProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const testimonialsPerPage = 3;
     const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
@@ -62,7 +63,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                     <div className="flex items-center justify-center gap-2 text-sm text-gray-600 mb-2">
                         <span>⭐ Real reviews from our</span>
                         <a
-                            href="https://www.facebook.com/kafebarakomalolos/reviews"
+                            href={facebookLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-[#1877F2] hover:underline font-semibold flex items-center gap-1"

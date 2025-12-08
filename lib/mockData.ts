@@ -452,4 +452,53 @@ export const TESTIMONIALS: Testimonial[] = [
     },
 ];
 
-
+export const TALISAY_TESTIMONIALS: Testimonial[] = [
+    {
+        id: 'tt1',
+        name: 'Reysa Isabel Alabado',
+        rating: 5,
+        comment: 'highly recommended coffee bar supplier! Thank you so much for being part of our special day! 🩷🌸',
+        date: '2025-04-23',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 'tt2',
+        name: 'Camille Maaba-Dimaculangan',
+        rating: 5,
+        comment: "Highly recommended if you're looking for a coffee bar! So lucky to have found them few days before my daughter's birthday celebration and they didn't disappoint! Well done! 👏🏼👏🏼👏🏼 Everything was perfect from inquiries, transaction, layout approval, and on-the-day coffee bar! Their kapeng barako tastes superb and all the guests liked it! The owners were very accomodating and considerate. 5+ star rating wouldn't be enough! ❤️",
+        date: '2024-02-25',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 'tt3',
+        name: 'Jerwin photography',
+        rating: 5,
+        comment: 'magandang view ng taal at masarap na kape maraming Riders na humihinto para mag milk tea or kape at sympre magandang spot natin to sa pamimitik sa mga dumadaan na riders at bikers 👍',
+        date: '2023-09-17',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 'tt4',
+        name: 'AkoSi Beat',
+        rating: 5,
+        comment: 'Maaliwalas na tanawin. Masarap na Kape',
+        date: '2023-03-28',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 'tt5',
+        name: 'JDP',
+        rating: 5,
+        comment: 'apaka solid nang kahit anong kape dito',
+        date: '2023-02-11',
+        image: '/images/icon.jpg',
+    },
+    {
+        id: 'tt6',
+        name: 'Gerard Moto Vlog',
+        rating: 5,
+        comment: 'nice scenery, ambiance and ofcourse Coffee... babalik balikan mo',
+        date: '2022-08-02',
+        image: '/images/icon.jpg',
+    },
+];

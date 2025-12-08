@@ -44,21 +44,6 @@ export default function MalolosBranch() {
             <FloatingMessenger />
             <Footer branch="malolos" />
 
-            {/* Supabase Connection Guide */}
-            {/* 
-        TODO: Connect to Supabase
-        1. Install: npm install @supabase/supabase-js
-        2. Create .env.local with:
-           NEXT_PUBLIC_SUPABASE_URL=your-url
-           NEXT_PUBLIC_SUPABASE_ANON_KEY=your-key
-        3. Create lib/supabase.js with client
-        4. Replace mock data with Supabase queries:
-           - Fetch menu items from 'menu' table where branch = 'malolos' or 'both'
-           - Fetch packages from 'packages' table
-           - Fetch gallery from 'gallery' table
-           - Fetch promotions from 'promotions' and 'banner' table
-           - Submit contact form to 'booking' table
-      */}
         </main>
     );
 }
