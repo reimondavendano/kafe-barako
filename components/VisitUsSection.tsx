@@ -24,7 +24,7 @@ export default function VisitUsSection({ branch }: VisitUsSectionProps) {
             name: 'Talisay Branch',
             address: 'Talisay, Batangas',
             // Coordinates for Talisay, Batangas: 13.9436°N, 120.9329°E
-            mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.123!2d120.9329!3d13.9436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDU2JzM3LjAiTiAxMjDCsDU1JzU4LjQiRQ!5e0!3m2!1sen!2sph!4v1733328000000!5m2!1sen!2sph',
+            mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.8322165578925!2d120.96958167509638!3d14.087079886340653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7716d36e68a1%3A0xd82dcd3b332898a2!2sKafe%20Barako!5e0!3m2!1sen!2sph!4v1768220701076!5m2!1sen!2sph',
             mapUrl: 'https://www.google.com/maps/search/?api=1&query=Talisay,Batangas',
             phone: '0927 969 8669',
             email: 'kapebarako@gmail.com',
