@@ -11,6 +11,8 @@ type GalleryProps = {
 export default function Gallery({ images }: GalleryProps) {
     const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
     const [activeFilter, setActiveFilter] = useState<string>('All');
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const ITEMS_PER_PAGE = 6;
 
     // Get unique categories
     const categories = ['All', ...Array.from(new Set(images.map(img => img.category)))];
@@ -19,6 +21,16 @@ export default function Gallery({ images }: GalleryProps) {
     const filteredImages = activeFilter === 'All'
         ? images
         : images.filter(img => img.category === activeFilter);
+
+    // Calculate pagination
+    const totalPages = Math.ceil(filteredImages.length / ITEMS_PER_PAGE);
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const currentImages = filteredImages.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+    const handleFilterChange = (category: string) => {
+        setActiveFilter(category);
+        setCurrentPage(1); // Reset to first page when filter changes
+    };
 
     return (
         <section id="gallery" className="py-20 bg-white">
@@ -36,7 +48,7 @@ export default function Gallery({ images }: GalleryProps) {
                     {categories.map(category => (
                         <button
                             key={category}
-                            onClick={() => setActiveFilter(category)}
+                            onClick={() => handleFilterChange(category)}
                             className={`
                 px-6 py-2 rounded-full font-semibold transition-all duration-300
                 ${activeFilter === category
@@ -51,7 +63,7 @@ export default function Gallery({ images }: GalleryProps) {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {filteredImages.map((img) => (
+                    {currentImages.map((img) => (
                         <div
                             key={img.id}
                             className="relative h-64 cursor-pointer overflow-hidden rounded-lg group"
@@ -74,6 +86,40 @@ export default function Gallery({ images }: GalleryProps) {
                 {filteredImages.length === 0 && (
                     <div className="text-center py-12">
                         <p className="text-gray-500 text-lg">No images available in this category.</p>
+                    </div>
+                )}
+
+                {/* Pagination Controls */}
+                {totalPages > 1 && (
+                    <div className="flex justify-center mt-12 gap-2">
+                        <button
+                            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                            disabled={currentPage === 1}
+                            className="px-4 py-2 border border-primary text-primary rounded-md disabled:opacity-50 hover:bg-primary/10 transition-colors"
+                        >
+                            Previous
+                        </button>
+
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                            <button
+                                key={page}
+                                onClick={() => setCurrentPage(page)}
+                                className={`w-10 h-10 rounded-md transition-colors ${currentPage === page
+                                    ? 'bg-primary text-white shadow-md'
+                                    : 'border border-primary text-primary hover:bg-primary/10'
+                                    }`}
+                            >
+                                {page}
+                            </button>
+                        ))}
+
+                        <button
+                            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                            disabled={currentPage === totalPages}
+                            className="px-4 py-2 border border-primary text-primary rounded-md disabled:opacity-50 hover:bg-primary/10 transition-colors"
+                        >
+                            Next
+                        </button>
                     </div>
                 )}
             </div>

@@ -11,6 +11,7 @@ import WhyKafeBarako from '@/components/WhyKafeBarako';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import VisitUsSection from '@/components/VisitUsSection';
 import MenuPreloadModal from '@/components/MenuPreloadModal';
+import CoffeeJourneySection from '@/components/CoffeeJourneySection';
 // import LoyaltyCardSection from '@/components/LoyaltyCardSection'; // Hidden - will be used in customer portal
 import { MALOLOS_MENU, PACKAGES, GALLERY_IMAGES, TESTIMONIALS } from '@/lib/mockData';
 
@@ -25,6 +26,7 @@ export default function MalolosBranch() {
             <Banner />
 
             <WhyKafeBarako />
+            <CoffeeJourneySection />
 
             <TestimonialsSection testimonials={TESTIMONIALS} />
 

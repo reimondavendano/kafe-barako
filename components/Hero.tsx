@@ -8,7 +8,7 @@ type HeroProps = {
     branch: 'malolos' | 'talisay';
 };
 
-const CAROUSEL_IMAGES = [
+const CAROUSEL_IMAGES_MALOLOS = [
     '/carousel/1.jpg',
     '/carousel/2.jpg',
     '/carousel/3.jpg',
@@ -18,23 +18,34 @@ const CAROUSEL_IMAGES = [
     '/carousel/7.jpg',
 ];
 
+const CAROUSEL_IMAGES_TALISAY = [
+    '/carousel-talisay/1.jpg',
+    '/carousel-talisay/2.jpg',
+    '/carousel-talisay/3.jpg',
+    '/carousel-talisay/4.jpg',
+    '/carousel-talisay/5.jpg',
+    '/carousel-talisay/6.jpg',
+    '/carousel-talisay/7.jpg',
+];
+
 export default function Hero({ branch }: HeroProps) {
     const branchName = branch === 'malolos' ? 'Malolos' : 'Talisay';
+    const carouselImages = branch === 'malolos' ? CAROUSEL_IMAGES_MALOLOS : CAROUSEL_IMAGES_TALISAY;
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % CAROUSEL_IMAGES.length);
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % carouselImages.length);
         }, 5000); // Change image every 5 seconds
 
         return () => clearInterval(interval);
-    }, []);
+    }, [carouselImages.length]);
 
     return (
         <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center text-center text-white overflow-hidden">
             {/* Carousel Background */}
             <div className="absolute inset-0 z-0">
-                {CAROUSEL_IMAGES.map((src, index) => (
+                {carouselImages.map((src, index) => (
                     <div
                         key={src}
                         className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
@@ -113,7 +124,7 @@ export default function Hero({ branch }: HeroProps) {
 
             {/* Carousel Indicators */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-                {CAROUSEL_IMAGES.map((_, index) => (
+                {carouselImages.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}

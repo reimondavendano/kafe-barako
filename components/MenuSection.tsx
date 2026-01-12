@@ -10,19 +10,28 @@ type MenuSectionProps = {
 
 export default function MenuSection({ items }: MenuSectionProps) {
     const categories = Array.from(new Set(items.map(item => item.category)));
-    const [activeCategory, setActiveCategory] = useState<string>(categories[0] || 'Hot Coffee');
+    const [activeCategory, setActiveCategory] = useState<string>(categories[0] || 'Kafe-Barako');
 
     const filteredItems = items.filter(item => item.category === activeCategory);
 
     // Category icons mapping
     const categoryIcons: Record<string, string> = {
         'Hot Coffee': '☕',
+        'Kafe-Barako': '☕',
+        'Cold-Brew': '🧊',
         'Cold Brew': '🧊',
         'Non-Coffee': '🍵',
         'Food': '🍽️',
+        'Snacks': '🍽️',
         'Coffee': '☕',
         'Beverages': '🥤',
         'Desserts': '🍰',
+        'Classic Coffee': '☕',
+        'Signature Coffee': '✨',
+        'Non Coffee': '🍵',
+        'Refresher and Cooler': '🍹',
+        'Rice Meals and Pasta': '🍝',
+        'Pastries and Snacks': '🍟',
     };
 
     return (
@@ -64,7 +73,7 @@ export default function MenuSection({ items }: MenuSectionProps) {
                             key={item.id}
                             className="bg-secondary/20 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 group transform hover:-translate-y-1"
                         >
-                            <div className="relative h-48 overflow-hidden">
+                            <div className="relative h-80 overflow-hidden">
                                 <Image
                                     src={item.image}
                                     alt={item.name}
