@@ -13,7 +13,7 @@ import VisitUsSection from '@/components/VisitUsSection';
 import MenuPreloadModal from '@/components/MenuPreloadModal';
 import CoffeeJourneySection from '@/components/CoffeeJourneySection';
 // import LoyaltyCardSection from '@/components/LoyaltyCardSection'; // Hidden - will be used in customer portal
-import { MALOLOS_MENU, PACKAGES, GALLERY_IMAGES, TESTIMONIALS } from '@/lib/mockData';
+import { MALOLOS_MENU, MALOLOS_PACKAGES, GALLERY_IMAGES, TESTIMONIALS } from '@/lib/mockData';
 
 import { FloatingMessenger } from '@/components/FloatingMessenger';
 
@@ -33,7 +33,7 @@ export default function MalolosBranch() {
             {/* <OffersSection /> */}
             {/* Special offers hidden - will be re-enabled in the future */}
             <MenuSection items={MALOLOS_MENU} />
-            <PackagesSection packages={PACKAGES} />
+            <PackagesSection packages={MALOLOS_PACKAGES} />
 
             {/* <LoyaltyCardSection /> */}
             {/* Loyalty card hidden - will be integrated into customer portal */}

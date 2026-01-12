@@ -42,7 +42,7 @@ export default function Home() {
                 />
               </div>
               <h2 className="text-2xl font-bold text-dark mb-2 group-hover:text-primary transition-colors">Malolos Branch</h2>
-              <p className="text-gray-600 mb-6">Visit our cozy spot in the heart of Bulacan.</p>
+              <p className="text-gray-600 mb-6">Our coffee stop in the heart of Bulacan</p>
               <span className="inline-block px-6 py-2 bg-secondary text-dark rounded-full font-semibold group-hover:bg-primary group-hover:text-white transition-colors">
                 Enter Branch &rarr;
               </span>

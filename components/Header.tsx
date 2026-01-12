@@ -10,6 +10,7 @@ type HeaderProps = {
 
 export default function Header({ branch }: HeaderProps) {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,6 +23,15 @@ export default function Header({ branch }: HeaderProps) {
     const logoSrc = branch === 'malolos' ? '/assets/kape barako.jpg' : '/assets/kape_talisay.jpg';
     const branchName = branch === 'malolos' ? 'Malolos Branch' : 'Talisay Branch';
     const basePath = branch === 'malolos' ? '/kafe-barako-malolos' : '/kafe-barako-talisay';
+
+    const NAV_LINKS = [
+        { name: 'Home', href: '#home' },
+        { name: 'Why Us', href: '#story' },
+        { name: 'Menu', href: '#menu' },
+        { name: 'Packages', href: '#packages' },
+        { name: 'Gallery', href: '#gallery' },
+        { name: 'Contact', href: '#contact' },
+    ];
 
     return (
         <header
@@ -43,15 +53,9 @@ export default function Header({ branch }: HeaderProps) {
                     </span>
                 </Link>
 
+                {/* Desktop Menu */}
                 <nav className="hidden md:flex gap-8 items-center">
-                    {[
-                        { name: 'Home', href: '#home' },
-                        { name: 'Why Us', href: '#story' },
-                        { name: 'Menu', href: '#menu' },
-                        { name: 'Packages', href: '#packages' },
-                        { name: 'Gallery', href: '#gallery' },
-                        { name: 'Contact', href: '#contact' },
-                    ].map((link) => (
+                    {NAV_LINKS.map((link) => (
                         <Link
                             key={link.name}
                             href={`${basePath}${link.href}`}
@@ -77,13 +81,39 @@ export default function Header({ branch }: HeaderProps) {
                     >
                         Book
                     </Link>
-                    <button className={`${isScrolled ? 'text-primary' : 'text-white'}`}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className={`${isScrolled ? 'text-primary' : 'text-white'}`}
+                        aria-label="Toggle menu"
+                    >
+                        {isMobileMenuOpen ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        )}
                     </button>
                 </div>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 py-4 px-6 flex flex-col gap-4 animate-fade-in-up">
+                    {NAV_LINKS.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={`${basePath}${link.href}`}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="text-dark font-medium py-2 border-b border-gray-50 last:border-0 hover:text-primary"
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                </div>
+            )}
         </header>
     );
 }

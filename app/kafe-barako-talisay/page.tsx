@@ -11,7 +11,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import VisitUsSection from '@/components/VisitUsSection';
 
 // import LoyaltyCardSection from '@/components/LoyaltyCardSection'; // Hidden - will be used in customer portal
-import { TALISAY_MENU, PACKAGES, TALISAY_GALLERY_IMAGES, TALISAY_TESTIMONIALS } from '@/lib/mockData';
+import { TALISAY_MENU, TALISAY_PACKAGES, TALISAY_GALLERY_IMAGES, TALISAY_TESTIMONIALS } from '@/lib/mockData';
 import Image from 'next/image';
 import WhyKafeBarakoTalisay from '@/components/WhyKafeBarakoTalisay';
 import CoffeeJourneySection from '@/components/CoffeeJourneySection';
@@ -37,7 +37,7 @@ export default function TalisayBranch() {
             {/* <OffersSection /> */}
             {/* Special offers hidden - will be re-enabled in the future */}
             <MenuSection items={TALISAY_MENU} />
-            <PackagesSection packages={PACKAGES} />
+            <PackagesSection packages={TALISAY_PACKAGES} />
 
             {/* <LoyaltyCardSection /> */}
             {/* Loyalty card hidden - will be integrated into customer portal */}

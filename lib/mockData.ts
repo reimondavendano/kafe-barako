@@ -13,10 +13,13 @@ export type PackageItem = {
     id: string;
     name: string;
     pax?: string;
-    description: string;
+    description?: string;
     inclusions?: string[];
-    price?: number;
-    type: 'Coffee Bar' | 'Event';
+    price: number | string;
+    type: string;
+    image?: string;
+    isPopular?: boolean;
+    note?: string;
 };
 
 export type GalleryItem = {
@@ -573,59 +576,264 @@ export const TALISAY_MENU: MenuItem[] = [
     },
 ];
 
-export const PACKAGES: PackageItem[] = [
+// Common Coffee Bar Packages
+const COFFEE_BAR_PACKAGES: PackageItem[] = [
     {
-        id: 'p1',
-        name: 'Intimate',
+        id: 'cb1',
+        name: 'Cozy Gathering',
         pax: '50pax',
-        description: 'Perfect for small gatherings',
-        inclusions: ['25 Hot Barako', '25 Cold Brew'],
+        description: 'Hot Kapeng Barako or Cold Brew drinks',
+        note: 'Choice of 2 flavors',
+        price: 5750,
         type: 'Coffee Bar',
+        image: '/menu/Pouch.JPG',
+        inclusions: [
+            'Hot Kapeng Barako',
+            'Cold Brew Drinks',
+            'Professional Barista',
+            'Coffee Bar Setup',
+
+        ]
     },
     {
-        id: 'p2',
-        name: 'Premium',
-        pax: '75pax',
-        description: 'Ideal for medium-sized events',
-        inclusions: ['35 Hot Barako', '40 Cold Brew'],
-        type: 'Coffee Bar',
-    },
-    {
-        id: 'p3',
-        name: 'Grand',
+        id: 'cb2',
+        name: 'Elegant Roast',
         pax: '100pax',
-        description: 'For large celebrations',
-        inclusions: ['50 Hot Barako', '50 Cold Brew'],
+        description: 'Hot Kapeng Barako or Cold Brew drinks',
+        note: 'Choice of 3 flavors',
+        price: 11000,
         type: 'Coffee Bar',
+        isPopular: true,
+        image: '/menu/Pouch.JPG',
+        inclusions: [
+            'Hot Kapeng Barako',
+            'Cold Brew Drinks',
+            'Professional Barista',
+            'Coffee Bar Setup',
+
+        ]
     },
     {
-        id: 'p4',
-        name: 'Customized',
-        description: 'Tailored to your needs',
-        inclusions: ['Hot Coffee', 'Cold Brew', 'Non-Coffee'],
+        id: 'cb3',
+        name: 'Prestige Blend',
+        pax: '150pax',
+        description: 'Hot Kapeng Barako or Cold Brew drinks',
+        note: 'Choice of 3 flavors',
+        price: 15500,
         type: 'Coffee Bar',
+        image: '/menu/Pouch.JPG',
+        inclusions: [
+            'Hot Kapeng Barako',
+            'Cold Brew Drinks',
+            'Professional Barista',
+            'Coffee Bar Setup',
+
+        ]
+    }
+];
+
+export const MALOLOS_PACKAGES: PackageItem[] = [
+    ...COFFEE_BAR_PACKAGES
+];
+
+export const TALISAY_PACKAGES: PackageItem[] = [
+    ...COFFEE_BAR_PACKAGES,
+    // Grazing Table
+    {
+        id: 'gt1',
+        name: 'Intimate Indulgence',
+        pax: '50pax',
+        description: 'Deliciously Handmade, Crafted For Celebrations',
+        price: 5750,
+        type: 'Grazing Table',
+        image: '/talisay-events/4.jpg',
+        inclusions: [
+            '2 types of sweets',
+            '3 types of meat',
+            '3 types of cheese',
+            'Canape',
+            'Seasonal Fruits',
+            'Crackers, Pretzels, and Chips'
+        ]
     },
     {
-        id: 'e1',
-        name: 'Birthday Package',
-        description: 'Celebrate your special day with us',
-        price: 5000,
-        type: 'Event',
+        id: 'gt2',
+        name: 'Gourmet Feast',
+        pax: '100pax',
+        description: 'Deliciously Handmade, Crafted For Celebrations',
+        price: 11000,
+        type: 'Grazing Table',
+        isPopular: true,
+        image: '/talisay-events/4.jpg',
+        inclusions: [
+            '2 types of sweets',
+            '3 types of meat',
+            '3 types of cheese',
+            'Canape',
+            'Seasonal Fruits',
+            'Crackers, Pretzels, and Chips'
+        ]
     },
     {
-        id: 'e2',
-        name: 'Meeting Room',
-        description: 'Private space for productivity',
-        price: 2000,
-        type: 'Event',
+        id: 'gt3',
+        name: 'Grand Spread',
+        pax: '150pax',
+        description: 'Deliciously Handmade, Crafted For Celebrations',
+        price: 15500,
+        type: 'Grazing Table',
+        image: '/talisay-events/4.jpg',
+        inclusions: [
+            '2 types of sweets',
+            '3 types of meat',
+            '3 types of cheese',
+            'Canape',
+            'Seasonal Fruits',
+            'Crackers, Pretzels, and Chips'
+        ]
+    },
+    // Kakanin Corner
+    {
+        id: 'kc1',
+        name: 'Package A',
+        pax: '50 pax',
+        description: 'Traditional Filipino Delicacies',
+        price: 8500,
+        type: 'Kakanin Corner',
+        image: '/talisay-menu/kakanin.jpg',
+        inclusions: [
+            '2 types of puto', 'Biko', 'Sapin-sapin', 'Kutsinta', 'Patiktik (kalamay ube)', 'Palitaw', 'Kapeng Barako'
+        ]
     },
     {
-        id: 'e3',
-        name: 'Wedding Package',
-        description: 'Make your dream wedding come true',
-        price: 25000,
-        type: 'Event',
+        id: 'kc2',
+        name: 'Package B',
+        pax: '70 pax',
+        description: 'Traditional Filipino Delicacies',
+        price: 11500,
+        type: 'Kakanin Corner',
+        image: '/talisay-menu/kakanin.jpg',
+        inclusions: [
+            '2 types of puto', 'Biko', 'Sapin-sapin', 'Kutsinta', 'Patiktik (kalamay ube)', 'Palitaw', 'Kapeng Barako'
+        ]
     },
+    {
+        id: 'kc3',
+        name: 'Package C',
+        pax: '100 pax',
+        description: 'Traditional Filipino Delicacies',
+        price: 13500,
+        type: 'Kakanin Corner',
+        image: '/talisay-menu/kakanin.jpg',
+        inclusions: [
+            '2 types of puto', 'Biko', 'Sapin-sapin', 'Kutsinta', 'Patiktik (kalamay ube)', 'Palitaw', 'Kapeng Barako'
+        ]
+    },
+    // Dessert Table
+    {
+        id: 'dt1',
+        name: 'INTIMATE',
+        pax: '50PAX',
+        description: 'Sweet treats for your guests',
+        price: 7000,
+        type: 'Dessert Table',
+        image: '/talisay-menu/chocolate-chip-cookies.jpg',
+        inclusions: [
+            'Chocolate chip cookies',
+            'Caramel bars',
+            'Dark Chocolate brownies',
+            'Mini muffins',
+            'Basque burnt cheesecups',
+            'Cheesecake shooters'
+        ]
+    },
+    {
+        id: 'dt2',
+        name: 'PREMIUM',
+        pax: '70PAX',
+        description: 'Sweet treats for your guests',
+        price: 9000,
+        type: 'Dessert Table',
+        image: '/talisay-menu/chocolate-chip-cookies.jpg',
+        inclusions: [
+            'Chocolate chip cookies',
+            'Caramel bars',
+            'Dark Chocolate brownies',
+            'Mini muffins',
+            'Basque burnt cheesecups',
+            'Cheesecake shooters',
+            '1 6inches basque burnt cheesecake'
+        ]
+    },
+    {
+        id: 'dt3',
+        name: 'GRAND',
+        pax: '100PAX',
+        description: 'Sweet treats for your guests',
+        price: 11000,
+        type: 'Dessert Table',
+        image: '/talisay-menu/chocolate-chip-cookies.jpg',
+        inclusions: [
+            'Chocolate chip cookies',
+            'Caramel bars',
+            'Dark Chocolate brownies',
+            'Mini muffins',
+            'Basque burnt cheesecups',
+            'Cheesecake shooters',
+            '2 6inches basque burnt cheesecake'
+        ]
+    },
+    // Sliders Station
+    {
+        id: 'ss1',
+        name: 'Package A',
+        pax: '50 pax',
+        description: 'Mini bite-sized delights',
+        price: 8500,
+        type: 'Sliders Station',
+        image: '/menu/Burger.JPG',
+        inclusions: [
+            '2 types of sweets',
+            'Mini Beef Sliders',
+            'Mini Hotdog buns',
+            'Nacho Chips',
+            '3 kinds of dips for Nachos (beef/salsa/cheesesauce)',
+            'Mini clubhouse sandwich'
+        ]
+    },
+    {
+        id: 'ss2',
+        name: 'Package B',
+        pax: '70 pax',
+        description: 'Mini bite-sized delights',
+        price: 11500,
+        type: 'Sliders Station',
+        image: '/menu/Burger.JPG',
+        inclusions: [
+            '2 types of sweets',
+            'Mini Beef Sliders',
+            'Mini Hotdog buns',
+            'Nacho Chips',
+            '3 kinds of dips for Nachos (beef/salsa/cheesesauce)',
+            'Mini clubhouse sandwich'
+        ]
+    },
+    {
+        id: 'ss3',
+        name: 'Package C',
+        pax: '100 pax',
+        description: 'Mini bite-sized delights',
+        price: 13500,
+        type: 'Sliders Station',
+        image: '/menu/Burger.JPG',
+        inclusions: [
+            '2 types of sweets',
+            'Mini Beef Sliders',
+            'Mini Hotdog buns',
+            'Nacho Chips',
+            '3 kinds of dips for Nachos (beef/salsa/cheesesauce)',
+            'Mini clubhouse sandwich'
+        ]
+    }
 ];
 
 export const GALLERY_IMAGES: GalleryItem[] = [
