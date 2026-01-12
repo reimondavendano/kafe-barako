@@ -97,7 +97,7 @@ export default function WhyKafeBarakoTalisay() {
                         <div className="absolute inset-0 bg-secondary rounded-t-[10rem] rounded-b-[2rem] transform -rotate-2 opacity-20"></div>
                         <div className="relative h-full w-full rounded-t-[10rem] rounded-b-[2rem] overflow-hidden shadow-2xl border-8 border-white">
                             <Image
-                                src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80"
+                                src="/talisay-operations/4.jpg"
                                 alt="Talisay View"
                                 fill
                                 className="object-cover"

@@ -96,7 +96,7 @@ export default function WhyKafeBarako() {
                         <div className="absolute inset-0 bg-secondary rounded-t-[10rem] rounded-b-[2rem] transform -rotate-2 opacity-20"></div>
                         <div className="relative h-full w-full rounded-t-[10rem] rounded-b-[2rem] overflow-hidden shadow-2xl border-8 border-white">
                             <Image
-                                src="/images/kafe1.jpg"
+                                src="/carousel/4.jpg"
                                 alt="Kafe Barako Ambiance"
                                 fill
                                 className="object-cover"
