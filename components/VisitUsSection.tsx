@@ -33,8 +33,8 @@ export default function VisitUsSection({ branch }: VisitUsSectionProps) {
                 weekend: 'Sat-Sun: 8:00 AM - 9:00 PM',
                 sunday: ''
             },
-            facebook: 'https://www.facebook.com/kafebarako',
-            instagram: 'https://www.instagram.com/kafebarako'
+            facebook: 'https://www.facebook.com/kafebarakoph',
+            instagram: 'https://www.instagram.com/kafe_barako/'
         }
     };
 

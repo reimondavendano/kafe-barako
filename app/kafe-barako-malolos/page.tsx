@@ -43,7 +43,7 @@ export default function MalolosBranch() {
             <VisitUsSection branch="malolos" />
 
             <ContactForm />
-            <FloatingMessenger />
+            <FloatingMessenger branch="malolos" />
             <Footer branch="malolos" />
 
         </main>

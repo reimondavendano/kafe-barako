@@ -15,6 +15,7 @@ import { TALISAY_MENU, PACKAGES, TALISAY_GALLERY_IMAGES, TALISAY_TESTIMONIALS } 
 import Image from 'next/image';
 import WhyKafeBarakoTalisay from '@/components/WhyKafeBarakoTalisay';
 import CoffeeJourneySection from '@/components/CoffeeJourneySection';
+import { FloatingMessenger } from '@/components/FloatingMessenger';
 
 export default function TalisayBranch() {
     return (
@@ -47,22 +48,10 @@ export default function TalisayBranch() {
 
             <ContactForm />
             <Footer branch="talisay" />
+            <FloatingMessenger branch="talisay" />
 
             {/* Supabase Connection Guide */}
-            {/* 
-        TODO: Connect to Supabase
-        1. Install: npm install @supabase/supabase-js
-        2. Create .env.local with:
-           NEXT_PUBLIC_SUPABASE_URL=your-url
-           NEXT_PUBLIC_SUPABASE_ANON_KEY=your-key
-        3. Create lib/supabase.js with client
-        4. Replace mock data with Supabase queries:
-           - Fetch menu items from 'menu' table where branch = 'talisay' or 'both'
-           - Fetch packages from 'packages' table
-           - Fetch gallery from 'gallery' table
-           - Fetch promotions from 'promotions' and 'banner' table
-           - Submit contact form to 'booking' table
-      */}
+            { }
         </main>
     );
 }
