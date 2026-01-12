@@ -92,7 +92,7 @@ export default function WhyKafeBarakoTalisay() {
                     </div>
 
                     {/* Right Side - Image */}
-                    <div className="flex-1 relative w-full h-[600px] lg:h-[700px] animate-fade-in-right">
+                    <div className="flex-1 relative w-full h-[600px] lg:h-[700px]">
                         <div className="absolute inset-0 bg-primary rounded-t-[10rem] rounded-b-[2rem] transform rotate-3 opacity-10"></div>
                         <div className="absolute inset-0 bg-secondary rounded-t-[10rem] rounded-b-[2rem] transform -rotate-2 opacity-20"></div>
                         <div className="relative h-full w-full rounded-t-[10rem] rounded-b-[2rem] overflow-hidden shadow-2xl border-8 border-white">

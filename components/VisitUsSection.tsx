@@ -10,13 +10,13 @@ export default function VisitUsSection({ branch }: VisitUsSectionProps) {
             // Using query parameter format to ensure red pin shows - zoom level 14
             mapEmbed: 'https://www.google.com/maps?q=Malolos+Sports+and+Convention+Center,+10+MacArthur+Hwy,+Malolos,+Bulacan&output=embed&z=14',
             mapUrl: 'https://maps.app.goo.gl/o4gmgngCzKtNUMhi6',
-            phone: '0965 695 2128',
+            phone: '0917 658 0208',
             email: 'kafebarako@gmail.com',
-            hours: {
-                weekday: 'Mon-Fri: 4:00 PM - 10:00 PM',
-                weekend: 'Sat: 3:00 PM - 10:00 PM',
-                sunday: 'Sun: Closed'
-            },
+            hours: [
+                { label: 'Mon-Wed, Fri:', value: '5:00 PM - 10:00 PM' },
+                { label: 'Thursday:', value: 'Closed' },
+                { label: 'Weekends:', value: '6:30 AM - 9:00 AM, 5:00 PM - 10:00 PM' }
+            ],
             facebook: 'https://www.facebook.com/kafebarakomalolos',
             instagram: 'https://www.instagram.com/kafe_barako/'
         },
@@ -26,13 +26,12 @@ export default function VisitUsSection({ branch }: VisitUsSectionProps) {
             // Coordinates for Talisay, Batangas: 13.9436°N, 120.9329°E
             mapEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.8322165578925!2d120.96958167509638!3d14.087079886340653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7716d36e68a1%3A0xd82dcd3b332898a2!2sKafe%20Barako!5e0!3m2!1sen!2sph!4v1768220701076!5m2!1sen!2sph',
             mapUrl: 'https://www.google.com/maps/search/?api=1&query=Talisay,Batangas',
-            phone: '0927 969 8669',
+            phone: '0952 586 2863',
             email: 'kapebarako@gmail.com',
-            hours: {
-                weekday: 'Mon-Fri: 8:00 AM - 8:00 PM',
-                weekend: 'Sat-Sun: 8:00 AM - 9:00 PM',
-                sunday: ''
-            },
+            hours: [
+                { label: 'Monday:', value: 'Closed' },
+                { label: 'Tue-Sun:', value: '1:00 PM - 8:00 PM' }
+            ],
             facebook: 'https://www.facebook.com/kafebarakoph',
             instagram: 'https://www.instagram.com/kafe_barako/'
         }
@@ -66,21 +65,13 @@ export default function VisitUsSection({ branch }: VisitUsSectionProps) {
                                 </div>
                                 <div className="flex-1">
                                     <h3 className="text-xl font-bold text-dark mb-3">Operating Hours</h3>
-                                    <div className="space-y-2 text-gray-700">
-                                        <p className="flex justify-between">
-                                            <span className="font-semibold">Weekdays:</span>
-                                            <span>{info.hours.weekday}</span>
-                                        </p>
-                                        <p className="flex justify-between">
-                                            <span className="font-semibold">Weekend:</span>
-                                            <span>{info.hours.weekend}</span>
-                                        </p>
-                                        {info.hours.sunday && (
-                                            <p className="flex justify-between">
-                                                <span className="font-semibold">Sunday:</span>
-                                                <span>{info.hours.sunday}</span>
-                                            </p>
-                                        )}
+                                    <div className="space-y-3 text-gray-700">
+                                        {info.hours.map((item, index) => (
+                                            <div key={index} className="grid grid-cols-[100px_1fr] gap-2">
+                                                <span className="font-semibold text-primary">{item.label}</span>
+                                                <span className="text-gray-600">{item.value}</span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
