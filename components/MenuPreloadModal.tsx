@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 const MENU_IMAGES = [
     {
-        src: '/new-menu/1.jpg',
-        caption: 'Fruit Tea',
-        label: 'Hibiscus and Vanilla Earl Grey'
+        src: '/new-menu/4.jpg',
+        caption: 'Cold Brews',
+        label: 'Sea Salt Latte and Tiramisu'
     },
     {
         src: '/new-menu/2.jpg',
@@ -20,10 +20,11 @@ const MENU_IMAGES = [
         label: 'Rich & Nutty Perfection'
     },
     {
-        src: '/new-menu/4.jpg',
-        caption: 'Cold Brews',
-        label: 'Sea Salt Latte and Tiramisu'
+        src: '/new-menu/1.jpg',
+        caption: 'Fruit Tea',
+        label: 'Hibiscus and Vanilla Earl Grey'
     },
+
 ];
 
 export default function MenuPreloadModal() {

@@ -38,7 +38,6 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 350,
         category: 'Kafe-Barako',
         image: '/menu/Pouch.JPG',
-        isBestseller: true,
     },
 
     // Cold-Brew
@@ -49,6 +48,7 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 140,
         category: 'Cold-Brew',
         image: '/menu/Hazelnut.JPG',
+        isBestseller: true,
     },
     {
         id: 'c2',
@@ -57,7 +57,6 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 150,
         category: 'Cold-Brew',
         image: '/menu/Macadamia.JPG',
-        isBestseller: true,
     },
     {
         id: 'c3',
@@ -83,7 +82,7 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 150,
         category: 'Cold-Brew',
         image: '/menu/Sea Salt.JPG',
-        isBestseller: true,
+        isNew: true,
     },
     {
         id: 'c6',
@@ -130,7 +129,6 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 150,
         category: 'Non-Coffee',
         image: '/menu/SB_Match.JPG',
-        isNew: true,
     },
     {
         id: 'n4',
@@ -165,7 +163,7 @@ export const MALOLOS_MENU: MenuItem[] = [
         price: 130,
         category: 'Non-Coffee',
         image: '/menu/StrawberryMilk.JPG',
-        isNew: true,
+        isBestseller: true,
     },
     {
         id: 'n8',

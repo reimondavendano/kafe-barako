@@ -3,8 +3,8 @@
 import { MessageCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const MESSENGER_LINK_MALOLOS = "https://www.facebook.com/messages/t/103360595563043";
-const MESSENGER_LINK_TALISAY = "https://www.facebook.com/messages/t/113017253874491";
+const MESSENGER_LINK_MALOLOS = "https://m.me/103360595563043";
+const MESSENGER_LINK_TALISAY = "https://m.me/113017253874491";
 
 type FloatingMessengerProps = {
     branch?: 'malolos' | 'talisay';
